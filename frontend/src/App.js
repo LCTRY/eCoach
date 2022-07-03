@@ -4,7 +4,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Header  from './components/header'
+import Header  from './components/Header'
 
 
 function App() {
