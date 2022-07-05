@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+:root {
+  --clr-accent: #777;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -106,6 +110,45 @@ h3 {
   cursor: pointer;
   border: none;
   background: none;
+}
+.calendar__header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendar__controls{
+  display: flex;
+  flex-direction:row;
+}
+.calendar__controls button{
+  margin: 5px;
+}
+
+
+.calendar__container{
+  height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5% 95%;
+}
+.calendar__headings,
+.calendar__week_field{
+  grid-column: 1/8;
+  display: grid;
+  grid-template-columns: repeat(7, 14.3%);
+}
+
+.calendar__week_field {
+  grid-template-rows: repeat(6, 16.60%);
+  
+}
+#calendar__day_field{
+  border: 1px var(--clr-accent) solid;
+}
+.selected {
+  background: rgb(184, 253, 81);
 }
 
 .form,

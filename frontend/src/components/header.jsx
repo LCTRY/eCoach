@@ -22,12 +22,17 @@ function Header () {
                 <Link to = '/'> eCoach</Link>
             </div>
             <ul>
-                {user ? (                
-                <li>
-                    <button className='btn' onClick={onLogout}>
-                        <FaSignOutAlt /> Logout
-                    </button>
-                </li> 
+                {user ? (  
+                <>
+                    <div className='menu'> 
+                        <Link to = '/schedule'> Schedule </Link>
+                    </div>
+                    <li>
+                        <button className='btn' onClick={onLogout}>
+                            <FaSignOutAlt /> Logout
+                        </button>
+                    </li> 
+                </>                  
                 ) : (
                 <>                 
                     <li>
