@@ -21,5 +21,4 @@ frontend:
 2. npm i react-icons
 3. npm i axios
 4. npm i react-toastify
-5. npm install --save @fullcalendar/react @fullcalendar/daygrid
-6. npm install --save moment
+5. npm install --save moment

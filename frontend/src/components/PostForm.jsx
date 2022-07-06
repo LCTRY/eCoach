@@ -14,8 +14,6 @@ function PostForm() {
     const {user} = useSelector((state) => state.auth)
     const { title, body} = postData
 
-    const post = useSelector((state) => state.post)
-
     const onChange = (e) => {
         setPostData((prevState) => ({
             ...prevState,

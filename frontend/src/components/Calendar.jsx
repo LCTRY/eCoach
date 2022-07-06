@@ -47,6 +47,7 @@ function Calendar () {
                 <section className='calendar__header'>
                     <h2>{currentMonth()} {currentYear()}</h2>
                     <div className='calendar__controls'>
+                        <button className='btn' > Add Event </button>
                         <button className='btn' onClick={() => setValue(prevMonth())}> <FaArrowLeft /> </button>
                         <button className='btn' onClick={() => setValue(nextMonth())}> <FaArrowRight/> </button>
                     </div>
