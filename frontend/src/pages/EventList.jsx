@@ -1,8 +1,8 @@
 import {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {getEvents, reset} from '../features/events/eventSlice'
-import {useNavigate} from 'react-router-dom'
 import EventItem from '../components/EventItem'
+import SubScheduleHeader from '../components/SubScheduleHeader'
 
 function EventList () {
     const headingList = ["Type", "Event", "Description", "Location", "Start", "End", " "]
@@ -22,6 +22,7 @@ function EventList () {
     
     return (
         <>
+            <SubScheduleHeader/>
             <section className="heading">
                 <h1>Team Events</h1>
             </section>

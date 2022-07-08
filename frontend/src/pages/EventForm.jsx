@@ -1,9 +1,10 @@
 import {useState} from 'react'
 import {createEvent} from '../features/events/eventSlice'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
+import SubScheduleHeader from '../components/SubScheduleHeader'
 
 function EventForm () {
-
+    const [userMessage, setUserMessage] = useState("")
     const dispatch = useDispatch()
 
     const [event, setEvent] = useState({
@@ -16,8 +17,6 @@ function EventForm () {
         location: "",
         eventType: ""
     })
-
-    const {user} = useSelector((state) => state.auth)
 
     const {eventName, 
         description,
@@ -42,6 +41,10 @@ function EventForm () {
             eventType, 
         }
 
+        setUserMessage(`New ${eventType} created`)
+        setTimeout(() => {
+            setUserMessage("")
+        }, 5000)
         dispatch(createEvent(eventData))
     }
 
@@ -54,6 +57,7 @@ function EventForm () {
 
     return (
         <>
+            <SubScheduleHeader/>
             <section className='heading'>
                 <h1>Create Event</h1>
             </section>
@@ -141,6 +145,7 @@ function EventForm () {
                        <div className='form-group'>
                             <button type='submit' className='btn btn-block'>Submit</button>
                     </div>
+                    {userMessage && <div className="message">{userMessage}</div>}
                 </form>
             </section>
         </>

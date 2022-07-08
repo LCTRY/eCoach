@@ -25,7 +25,7 @@ function Header () {
                 {user ? (  
                 <>
                     <div className='menu'> 
-                        <Link to = '/schedule'> Schedule </Link>
+                        <Link to = '/calendar'> Schedule </Link>
                     </div>
                     <li>
                         <button className='btn' onClick={onLogout}>

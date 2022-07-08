@@ -4,8 +4,11 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Schedule from './pages/Schedule'
+import Calendar  from './pages/Calendar'
+import EventList  from './pages/EventList'
+import EventForm  from './pages/EventForm'
 import Header  from './components/Header'
+
 
 
 function App() {
@@ -18,7 +21,9 @@ function App() {
             <Route path ='/' element={<Dashboard />} />
             <Route path ='/login' element={<Login />} />
             <Route path ='/register' element={<Register />} />
-            <Route path ='/schedule' element={<Schedule />} />
+            <Route path ='/calendar' element={<Calendar />} />
+            <Route path ='/eventList' element={<EventList />} />
+            <Route path ='/eventForm' element={<EventForm />} />
           </Routes>
         </div>
       </Router>
