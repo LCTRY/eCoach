@@ -6,6 +6,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import SubScheduleHeader from '../components/SubScheduleHeader'
 import {getEvents, reset} from '../features/events/eventSlice'
 import { useLayoutEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Calendar () {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -86,7 +87,7 @@ function Calendar () {
         <section className='calendar__header'>
             <h2>{currentMonth()} {currentYear()}</h2>
             <div className='calendar__controls'>
-                <button className='btn' > Add Event </button>
+                <Link to="/eventForm"><button className='btn' > Add Event </button></Link>
                 <button className='btn' onClick={() => setValue(prevMonth())}> <FaArrowLeft /> </button>
                 <button className='btn' onClick={() => setValue(nextMonth())}> <FaArrowRight/> </button>
             </div>

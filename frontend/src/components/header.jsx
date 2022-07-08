@@ -25,13 +25,14 @@ function Header () {
                 {user ? (  
                 <>
                     <div className='menu'> 
+                        <Link to = '/practice'> Practice </Link>
+                    </div>
+                    <div className='menu'> 
                         <Link to = '/calendar'> Schedule </Link>
                     </div>
-                    <li>
-                        <button className='btn' onClick={onLogout}>
+                    <button className='btn' onClick={onLogout}>
                             <FaSignOutAlt /> Logout
-                        </button>
-                    </li> 
+                    </button>
                 </>                  
                 ) : (
                 <>                 

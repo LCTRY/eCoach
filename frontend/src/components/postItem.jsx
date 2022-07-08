@@ -1,3 +1,4 @@
+import { HTML5_FMT } from "moment";
 import { useDispatch } from "react-redux"
 import {deletePost} from '../features/posts/postSlice'
 
@@ -6,10 +7,14 @@ function PostItem ({post}) {
     const dispatch = useDispatch()
     return (
         <div className="post">
-            <div>{new Date(post.createdAt).toLocaleString('en-US', options)}</div>
-            <button className="close" onClick={() => dispatch(deletePost(post._id))} > X </button>    
+            <div className="post__header">
             <h2>{post.title}</h2>
+            <h5>
+                {new Date(post.createdAt).toLocaleString('en-US', options)}
+            </h5>
+            </div>
             <p>{post.body}</p>
+            <button className="close" onClick={() => dispatch(deletePost(post._id))} > X </button>    
         </div>
     )
 }

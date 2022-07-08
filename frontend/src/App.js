@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Calendar  from './pages/Calendar'
 import EventList  from './pages/EventList'
 import EventForm  from './pages/EventForm'
+import Practice  from './pages/Practice'
 import Header  from './components/Header'
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path ='/calendar' element={<Calendar />} />
             <Route path ='/eventList' element={<EventList />} />
             <Route path ='/eventForm' element={<EventForm />} />
+            <Route path ='/practice' element={<Practice />} />
           </Routes>
         </div>
       </Router>
