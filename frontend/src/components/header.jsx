@@ -25,7 +25,7 @@ function Header () {
                 {user ? (  
                 <>
                     <div className='menu'> 
-                        <Link to = '/practice'> Practice </Link>
+                        <Link to = '/practiceForm'> Practice </Link>
                     </div>
                     <div className='menu'> 
                         <Link to = '/calendar'> Schedule </Link>
