@@ -6,13 +6,13 @@ function SubPracticeHeader () {
         <header className='header'>
             <ul>
                     <div className='menu'> 
-                        <Link to = '/calendar'> Create Practice </Link>
+                        <Link to = '/practiceForm'> Create Practice </Link>
                     </div>
                     <div className='menu'> 
-                        <Link to = '/eventList'> Create Drill </Link>
+                        <Link to = '/drillsForm'> Create Drill </Link>
                     </div>
                     <div className='menu'> 
-                        <Link to = '/eventForm'> View Practice Plans </Link>
+                        <Link to = '/drillsList'> View Drills </Link>
                     </div>        
             </ul>
         </header>

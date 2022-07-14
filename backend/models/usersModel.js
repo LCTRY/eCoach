@@ -16,6 +16,11 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'please add email']
     },
+    teams: [
+        {
+            teamName: String,
+        },
+    ],
     userType: {
         type: String,
         required: [true, 'please add user type']

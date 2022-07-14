@@ -12,7 +12,9 @@ const eventSchema = mongoose.Schema({
         type: String
     },
     drills: [
-            { id: String, name: String }
+            { 
+                id: String, name: String 
+            },
     ]
 
 })

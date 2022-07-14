@@ -15,7 +15,7 @@ const getUsers = asyncHandler(async(req, res) => {
 //  @route     POST /api/users
 //  @access    Private
 const registerUser = asyncHandler(async(req, res) => {
-    const {first_name, last_name, password, email, userType} = req.body
+    const {first_name, last_name, password, email, teams, userType} = req.body
     
     if (!first_name || !last_name || !password || !email || !userType) {
         res.status(400)
@@ -36,13 +36,15 @@ const registerUser = asyncHandler(async(req, res) => {
         last_name,
         password: hashedPassword,
         email,
+        teams,
         userType        
     })
 
         if(user){
             res.status(201).json({
                 _id: user.id,
-                name: `${user.first_name} ${user.last_name}`,
+                first_name: user.first_name,
+                last_name: user.last_name,
                 email: user.email,
                 token: generateToken(user._id)
             })
@@ -64,8 +66,10 @@ const loginUser = asyncHandler(async(req, res) => {
     if (userExists && (await bcrypt.compare(password, userExists.password))) {
         res.json({
             _id: userExists.id,
-            name: `${userExists.first_name} ${userExists.last_name}`,
+            first_name: userExists.first_name,
+            last_name: userExists.last_name,
             email: userExists.email,
+            teams: userExists.teams,
             token: generateToken(userExists._id)
         })
     } else {

@@ -27,7 +27,7 @@ function PostForm() {
         const postData = {
             title,
             body,
-            author: user.name
+            author: user.first_name
         }
 
         dispatch(createPost(postData))

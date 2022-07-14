@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const eventSchema = mongoose.Schema({
-    name: {
+    drillName: {
         type: String
     },
     createdBy: {
@@ -9,6 +9,12 @@ const eventSchema = mongoose.Schema({
     },
     team: {
         type: String
+    },
+    description: {
+        type: String
+    },
+    image:{
+
     }
 
 })

@@ -41,7 +41,7 @@ function Dashboard() {
                     ) 
                 : 
                     (
-                        <h1>Welcome {user.name}</h1>
+                        <h1>Welcome {user.first_name} to the {user.teams[0].teamName} </h1>
                     )}
                 
             </section>

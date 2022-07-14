@@ -14,12 +14,20 @@ function Register () {
         last_name:'',
         password:'',
         password2:'',
+        teams: '',
         email: '',
         userType: ''
     })
+    const { 
+        first_name, 
+        last_name, 
+        password, 
+        password2, 
+        teams,
+        email, 
+        userType} = registerFormData
 
-    const { first_name, last_name, password, password2, email, userType} = registerFormData
-    
+  
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -48,6 +56,8 @@ function Register () {
     const onSubmit = (e) => {
         e.preventDefault()
 
+        let teamObj = {teamName: registerFormData.teams}
+       
         if(password !== password2) {
             toast.error('Passwords do not match')
         } else {
@@ -55,6 +65,7 @@ function Register () {
                 first_name,
                 last_name,
                 email,
+                teams: teamObj,
                 password,
                 userType
             }
@@ -121,6 +132,13 @@ function Register () {
                             value={email}
                             placeholder="Enter your email"
                             onChange={onChange}                
+                        />
+                        <input type='text' className='form-control'
+                            id='teams'
+                            name='teams'
+                            value={teams}
+                            placeholder="Enter your teams name"
+                            onChange={onChange}            
                         />
                         <select 
                             className='form-control'

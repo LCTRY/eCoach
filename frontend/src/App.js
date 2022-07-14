@@ -10,6 +10,8 @@ import EventForm  from './pages/EventForm'
 import Practice  from './pages/Practice'
 import PracticeForm  from './pages/PracticeForm'
 import Header  from './components/Header'
+import DrillsForm from './pages/DrillForm'
+import DrillsList from './pages/DrillsList'
 
 
 
@@ -28,6 +30,8 @@ function App() {
             <Route path ='/eventForm' element={<EventForm />} />
             <Route path ='/practice' element={<Practice />} />
             <Route path ='/practiceForm' element={<PracticeForm />} />
+            <Route path ='/drillsForm' element={<DrillsForm />} />
+            <Route path="/drillsList" element={<DrillsList />} / >
           </Routes>
         </div>
       </Router>
