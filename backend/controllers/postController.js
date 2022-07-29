@@ -8,12 +8,19 @@ const getPosts = asyncHandler(async(req, res) => {
     const posts = await Post.find()
     res.status(200).json(posts)
 })
+//  @desc      get all team posts
+//  @route     GET /api/posts
+//  @access    private
+const getAllTeamPosts = asyncHandler(async(req, res) => {
+    const posts = await Post.find({"teamName":req.body.teamName})
+    res.status(200).json(posts)
+})
 
 //  @desc      create post
 //  @route     GET /api/posts
 //  @access    private
 const createPost = asyncHandler(async(req, res) => {
-    const {title, body, comments, author} = req.body 
+    const {title, body, comments, author, teamID} = req.body 
 
     if (!title || !body || !author) {
         res.status(400)
@@ -24,7 +31,8 @@ const createPost = asyncHandler(async(req, res) => {
         title, 
         body, 
         comments, 
-        author
+        author,
+        teamID
     })
 
     if(post) {
@@ -67,5 +75,6 @@ const deletePost = asyncHandler(async(req, res) => {
 module.exports = {
     getPosts,
     createPost,
-    deletePost
+    deletePost,
+    getAllTeamPosts
 }

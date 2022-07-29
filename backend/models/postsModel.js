@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 const postSchema = mongoose.Schema ({
     title: {
         type: String,
-        require: [true, 'please add title']
+        require: [true, 'add title']
     },
     body: {
         type: String,
-        require: [true, 'please add body']
+        require: [true, 'add body']
     },
     comments: [
         { 
@@ -16,7 +16,11 @@ const postSchema = mongoose.Schema ({
     ],
     author: {
         type: String,
-        require: [true, 'please add author']
+        require: [true, 'add author']
+    },
+    teamID: {
+        type: String,
+        require: [true, 'add teamID']
     }
 },
     {

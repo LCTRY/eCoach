@@ -79,6 +79,15 @@ h3 {
 .header ul li a svg {
   margin-right: 5px;
 }
+.logo {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+}
+
+.logo__link{
+  margin-right: 10px;
+}
 
 .heading {
   font-size: 2rem;

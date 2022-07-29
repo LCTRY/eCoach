@@ -13,8 +13,7 @@ function Dashboard() {
     const dispatch = useDispatch()
 
     const {user} = useSelector((state) => state.auth)
-    const {posts, isLoading, isError, message} = useSelector((state) => 
-        state.posts)
+    const {posts, isError, message} = useSelector((state) => state.posts)
 
     useEffect(() => {
         if (isError) {
@@ -41,9 +40,8 @@ function Dashboard() {
                     ) 
                 : 
                     (
-                        <h1>Welcome {user.first_name} to the {user.teams[0].teamName} </h1>
+                        <h1>Welcome {user.first_name} </h1>
                     )}
-                
             </section>
             <section className='content'>
                 {posts.length > 0 ? 
